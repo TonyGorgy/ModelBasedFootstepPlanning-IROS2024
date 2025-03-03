@@ -42,18 +42,18 @@ from gym.utils import BaseKeyboardInterface
 # Base class for RL tasks
 class BaseTask:
 
-    def __init__(self, cfg: Union[LeggedRobotCfg, FixedRobotCfg], sim_params, physics_engine, sim_device, headless):
+    def __init__(self, cfg: Union[LeggedRobotCfg, FixedRobotCfg], sim_params, physics_engine, simu_device, headless):
         self.gym = gymapi.acquire_gym()
 
         self.sim_params = sim_params
         self.physics_engine = physics_engine
-        self.sim_device = sim_device
-        sim_device_type, self.sim_device_id = gymutil.parse_device_str(self.sim_device)
+        self.simu_device = simu_device
+        sim_device_type, self.sim_device_id = gymutil.parse_device_str(self.simu_device)
         self.headless = headless
 
         # env device is GPU only if sim is on GPU and use_gpu_pipeline=True, otherwise returned tensors are copied to CPU by physX.
         if sim_device_type=='cuda' and sim_params.use_gpu_pipeline:
-            self.device = self.sim_device
+            self.device = self.simu_device
         else:
             self.device = 'cpu'
 

@@ -20,7 +20,7 @@ from .fixed_robot_config import FixedRobotCfg
 
 class FixedRobot(BaseTask):
 
-    def __init__(self, cfg: FixedRobotCfg, sim_params, physics_engine, sim_device, headless):
+    def __init__(self, cfg: FixedRobotCfg, sim_params, physics_engine, simu_device, headless):
         """ Parses the provided config file,
             calls create_sim() (which creates, simulation, terrain and environments),
             initilizes pytorch buffers used during training
@@ -37,7 +37,7 @@ class FixedRobot(BaseTask):
         self.sim_params = sim_params
         self.debug_viz = False
         self._parse_cfg()
-        super().__init__(self.cfg, sim_params, physics_engine, sim_device, headless)
+        super().__init__(self.cfg, sim_params, physics_engine, simu_device, headless)
 
         if not self.headless:
             self.set_camera(self.cfg.viewer.pos, self.cfg.viewer.lookat)

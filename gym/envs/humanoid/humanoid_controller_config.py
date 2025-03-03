@@ -10,9 +10,9 @@ from gym.envs.base.legged_robot_config \
 
 class HumanoidControllerCfg(LeggedRobotCfg):
     class env(LeggedRobotCfg.env):
-        num_envs = 4096
+        num_envs = 256 #4096
         num_actuators = 10
-        episode_length_s = 5 # 100
+        episode_length_s = 5 # 100 # episode length in seconds
 
     class terrain(LeggedRobotCfg.terrain):
         curriculum = False

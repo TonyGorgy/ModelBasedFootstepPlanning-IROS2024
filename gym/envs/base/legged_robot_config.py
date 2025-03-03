@@ -32,7 +32,7 @@ from .base_config import BaseConfig
 
 class LeggedRobotCfg(BaseConfig):
     class env:
-        num_envs = 4096  # (n_robots in Rudin 2021 paper - batch_size = n_steps * n_robots)
+        num_envs = 2  #4096 (n_robots in Rudin 2021 paper - batch_size = n_steps * n_robots)
         num_actuators = 12
         env_spacing = 3.  # not used with heightfields/trimeshes 
         episode_length_s = 20  # episode length in seconds
@@ -290,8 +290,8 @@ class LeggedRobotRunnerCfg(BaseConfig):
     class runner:
         policy_class_name = 'ActorCritic'
         algorithm_class_name = 'PPO'
-        num_steps_per_env = 24 # per iteration (n_steps in Rudin 2021 paper - batch_size = n_steps * n_robots)
-        max_iterations = 1500 # number of policy updates
+        num_steps_per_env = 2 #24 # per iteration (n_steps in Rudin 2021 paper - batch_size = n_steps * n_robots)
+        max_iterations = 64 #1500 # number of policy updates
         SE_learner = None
         # logging
         save_interval = 50 # check for potential saves every this many iterations

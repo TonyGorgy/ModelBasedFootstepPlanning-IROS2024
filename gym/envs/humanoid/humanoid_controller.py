@@ -30,8 +30,8 @@ import torch.nn.functional as F
 
 class HumanoidController(LeggedRobot):
     cfg: HumanoidControllerCfg
-    def __init__(self, cfg, sim_params, physics_engine, sim_device, headless):
-        super().__init__(cfg, sim_params, physics_engine, sim_device, headless)
+    def __init__(self, cfg, sim_params, physics_engine, simu_device, headless):
+        super().__init__(cfg, sim_params, physics_engine, simu_device, headless)
 
     def _setup_keyboard_interface(self):
         self.keyboard_interface = XCoMKeyboardInterface(self)

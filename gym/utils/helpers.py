@@ -172,7 +172,7 @@ def get_args():
         {"name": "--headless", "action": "store_true", "default": False, "help": "Force display off at all times"},
         {"name": "--horovod", "action": "store_true", "default": False, "help": "Use horovod for multi-gpu training"},
         {"name": "--rl_device", "type": str, "default": "cuda:0", "help": 'Device used by the RL algorithm, (cpu, gpu, cuda:0, cuda:1 etc..)'},
-        {"name": "--sim_device", "type": str, "default": "cuda:0", "help": 'Device used by the simulation, (cpu, gpu, cuda:0, cuda:1 etc..)'},
+        {"name": "--simu_device", "type": str, "default": "cuda:0", "help": 'Device used by the simulation, (cpu, gpu, cuda:0, cuda:1 etc..)'},
         {"name": "--num_envs", "type": int, "help": "Number of environments to create. Overrides config file if provided."},
         {"name": "--seed", "type": int, "help": "Random seed. Overrides config file if provided."},
         {"name": "--max_iterations", "type": int, "help": "Maximum number of training iterations. Overrides config file if provided."},
@@ -201,8 +201,8 @@ def get_args():
 
     # name alignment
     args.sim_device_id = args.compute_device_id
-    args.sim_device = args.sim_device_type
-    if args.sim_device=='cuda':
-        args.sim_device += f":{args.sim_device_id}"
+    args.simu_device = args.sim_device_type
+    if args.simu_device=='cuda':
+        args.simu_device += f":{args.sim_device_id}"
     return args
 

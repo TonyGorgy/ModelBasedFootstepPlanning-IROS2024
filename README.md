@@ -56,7 +56,7 @@ python LIPM/demo_LIPM_3D_vt_analysis.py
 ```bash
 python gym/scripts/train.py --task=humanoid_controller
 ```
--  To run on CPU add the following arguments: `--sim_device=cpu`, `--rl_device=cpu` (sim on CPU and rl on GPU is possible).
+-  To run on CPU add the following arguments: `--simu_device=cpu`, `--rl_device=cpu` (sim on CPU and rl on GPU is possible).
 -  To run headless (no rendering) add `--headless`.
 - **Important**: To improve performance, once the training starts press `v` to stop the rendering. You can then enable it later to check the progress.
 - The trained policy is saved in `gym/logs/<experiment_name>/<date_time>_<run_name>/model_<iteration>.pt`. Where `<experiment_name>` and `<run_name>` are defined in the train config.

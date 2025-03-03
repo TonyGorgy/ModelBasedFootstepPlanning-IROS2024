@@ -144,7 +144,7 @@ class TaskRegistry():
         env = task_class(   cfg=env_cfg,
                             sim_params=sim_params,
                             physics_engine=args.physics_engine,
-                            sim_device=args.sim_device,
+                            simu_device=args.simu_device,
                             headless=args.headless)
         return env, env_cfg
 
