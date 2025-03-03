@@ -2,7 +2,7 @@
 
 ## New item added
 - Rename "--sim_device" to "--simu_device"
-- Change the Env-num to adopt the  
+- Change the Env-num to adopt the Nvidia-laptop 3060
 ---
 This repository is an open-sourced code for the following paper presented at the 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).
 
